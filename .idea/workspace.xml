@@ -11,16 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b357ef8f-c7ff-4c84-bc19-69435910d8f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello/webapp/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello/webapp/style/css/navbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello/webapp/style/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello/webapp/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello/webapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello/hello/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/hello/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello/webapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/webapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/webapp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello/webapp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/webapp/templates/product_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/templates/product_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/webapp/templates/product_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/templates/product_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/webapp/templates/product_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/templates/product_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/webapp/templates/product_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/templates/product_view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello/webapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello/webapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614943300980</updated>
       <workItem from="1614943303120" duration="84000" />
-      <workItem from="1614943881374" duration="4525000" />
+      <workItem from="1614943881374" duration="8011000" />
     </task>
     <servers />
   </component>
@@ -130,22 +128,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="466" y="121" width="424" height="478" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1614948016996" />
-    <state width="1324" height="174" key="GridCell.Tab.0.bottom" timestamp="1614945884542">
+    <state width="1324" height="174" key="GridCell.Tab.0.bottom" timestamp="1614949400083">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614945884542" />
-    <state width="1324" height="174" key="GridCell.Tab.0.center" timestamp="1614945884539">
+    <state width="1324" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1614949400083" />
+    <state width="1324" height="174" key="GridCell.Tab.0.center" timestamp="1614949400081">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614945884539" />
-    <state width="1324" height="174" key="GridCell.Tab.0.left" timestamp="1614945884537">
+    <state width="1324" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1614949400081" />
+    <state width="1324" height="174" key="GridCell.Tab.0.left" timestamp="1614949400079">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614945884537" />
-    <state width="1324" height="174" key="GridCell.Tab.0.right" timestamp="1614945884541">
+    <state width="1324" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1614949400079" />
+    <state width="1324" height="174" key="GridCell.Tab.0.right" timestamp="1614949400082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1324" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614945884541" />
+    <state width="1324" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1614949400082" />
     <state width="222" height="457" key="HiddenNamespacesPopup" timestamp="1614945502061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

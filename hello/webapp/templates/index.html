@@ -2,14 +2,11 @@
 {% block content %}
     <h1>Товар list</h1>
     {% for product in products %}
-        <p>{{ product.name }}<a href="{% url "product_view" product.id %}">
-            Описание: {{ product.description }}</a><br/>
-           Категория: {{ product.category }}<br/>
-            Остаток: {{ product.remainder }}<br/>
+            <p><a href="{% url "product_view" product.id %}"> Название: {{ product.name }}</a><br/>
+            Категория: {{ product.category }}<br/>
             Стоимость: {{ product.price }}
         </p>
         <br/>
-        <br/>
     {% endfor %}
-    <a href="{% url "product_add"  %}">Создать товар</a>
+{#    <a href="{% url "product_add"  %}">Создать товар</a>#}
 {% endblock %}

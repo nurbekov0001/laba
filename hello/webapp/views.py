@@ -6,19 +6,19 @@ from webapp.forms import ProductForm, ProductDeleteForm
 
 
 def index_view(request):
-    products = Product.objects.all()
+    products = Product.objects.all().exclude(remainder=0).order_by("category", "name")
     return render(request, 'index.html', context={'products': products})
 
 
 def product_view(request, pk):
-    products = get_object_or_404(Product, id=pk)
-    return render(request, 'products_view.html', context={'products': products})
+    product = get_object_or_404(Product, id=pk)
+    return render(request, 'product_view.html', context={'product': product})
 
 
 def product_create_view(request):
     if request.method == "GET":
         form = ProductForm()
-        return render(request, 'products_create.html', {'category': CATEGORY_CHOICES})
+        return render(request, 'product_create.html', {'category': CATEGORY_CHOICES})
     elif request.method == "POST":
         form = ProductForm(data=request.POST)
         if form.is_valid():

@@ -1,26 +1,9 @@
-{% extends "base.html" %}
-{% block content %}
-<h1>Введите Задачу </h1>
-<form action="{% url 'product_add' %}" method="post">
-    {% csrf_token %}
-    <label>Name:</label><br/>
-    <textarea name="name"></textarea><br/>
-    <label>Description:</label><br/>
-    <textarea name="description"></textarea><br/>
-    <label>Category:</label><br/>
-    <select name="category" id="">
-        {% for i in category %}
-        <option>{{ i.0}}</option>
-  {% endfor %}
-    </select>
-    <br/><br/>
-     <label>Remainder:</label><br/>
-    <textarea name="remainder"></textarea><br/>
-      <label>Price:</label><br/>
-    <textarea name="price"></textarea><br/>
-<br/>
-<br/>
-    <a href="{% url "product_list" %}">Главная страница</a>
-</form>
-{% endblock %}
+{% extends 'base.html' %}
 
+{% block page_header %}Добавить товар{% endblock page_header %}
+
+{% block content %}
+    <form action="/product/add/" method="post">
+        {% include "product_form.html" with button_text="Создать продукт" %}
+    </form>
+{% endblock content %}
