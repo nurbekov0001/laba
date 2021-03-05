@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Новостной портал номер [-1] в мире{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/navbar.css" %}">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="{% url "task_list" %}">Все задачи</a></li>
+                <li><a href="{% url "task_add" %}">Создать задачу</a></li>
+            {% block menu %}{% endblock %}
+        </ul>
+    </nav>
+{% block content %}{% endblock %}
+</body>
+</html>

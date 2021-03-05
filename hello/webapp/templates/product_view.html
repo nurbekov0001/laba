@@ -1,0 +1,23 @@
+
+
+{% extends "base.html" %}
+
+{% block menu %}
+
+    <li><a href="{% url "task_update" task.id %}">Редактировать задачу</a></li>
+    <li><a href="{% url "task_delete" task.id %}">Удалить задачу</a></li>
+{% endblock menu %}
+{% block content %}
+{% block page_header %}Статья {{ task.id }}{% endblock page_header %}
+
+
+    <p>Description: {{ task.description}}</p>
+        <p>Detailed description: {{ task.detailed_description}}</p>
+    <p>Status: {{ task.status }}</p>
+    {%if task.date_done == None %}
+         <p>дату не вводили <p>
+    {% else %}
+        <p>Data: {{task.date_done}} </p>
+    {% endif %}
+    <a href="{% url "task_list" %}">Главная страница</a>
+{% endblock %}
