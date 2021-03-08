@@ -18,7 +18,7 @@ def product_view(request, pk):
 def product_create_view(request):
     if request.method == "GET":
         form = ProductForm()
-        return render(request, 'product_create.html', {'category': CATEGORY_CHOICES,'form': form})
+        return render(request, 'product_create.html', {'category': CATEGORY_CHOICES, 'form': form})
     elif request.method == "POST":
         form = ProductForm(data=request.POST)
         if form.is_valid():
