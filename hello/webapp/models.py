@@ -22,3 +22,5 @@ class Product(models.Model):
         return f'{self.id}. {self.name}:{self.description} {self.category} {self.remainder}{self.price}'
 
 # Create your models here.
+
+

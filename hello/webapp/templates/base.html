@@ -8,15 +8,20 @@
     <link rel="stylesheet" href="{% static "css/navbar.css" %}">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" >
         <ul class="menu">
-            <li><a href="{% url "product_list" %}">Все товары</a></li>
-                <li><a href="{% url "product_add" %}">Создать товар</a></li>
+            <li><a href="{% url "product_list" %}">Все проекты</a></li>
+                    <li><a href="{% url "product_add" %}">Создать Проект</a></li>
+
+
             {% block menu %}{% endblock %}
         </ul>
     </nav>
     <div class="container">
-{% block content %}{% endblock %}
+    {% block page_header %}{% endblock %}
+    {% block content %}{% endblock %}
+
+
     </div>
 </body>
 </html>
