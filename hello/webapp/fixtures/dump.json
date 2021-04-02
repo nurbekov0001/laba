@@ -3,93 +3,123 @@
   "model": "webapp.product",
   "pk": 1,
   "fields": {
-    "name": "ноутбук",
-    "description": "acer 8gb 1терабайт Разрешение экрана: 1920x1080 Full HD",
-    "category": "ACER",
-    "remainder": 100,
-    "price": "40000.00"
+    "name": "dfgdsffdgdfgdf1111",
+    "description": "fdfdsgdfgsd",
+    "category": "OTHER",
+    "remainder": 32432,
+    "price": "2132.00"
   }
 },
 {
   "model": "webapp.product",
   "pk": 2,
   "fields": {
-    "name": "ноутбук samsung",
-    "description": "samsung 16gb 2 терабайта\r\nДиагональ экрана: 15.6\"\r\nРазрешение экрана: 1920x1080 Full HD",
-    "category": "SAMSUNG",
-    "remainder": 131,
-    "price": "78000.00"
+    "name": "2 продукт",
+    "description": "fasdfsdfasdf",
+    "category": "ACER",
+    "remainder": 3243,
+    "price": "4321.00"
   }
 },
 {
   "model": "webapp.product",
   "pk": 3,
   "fields": {
-    "name": "samsung s20",
-    "description": "6/128",
-    "category": "SAMSUNG",
-    "remainder": 20,
-    "price": "40000.00"
+    "name": "удалить",
+    "description": "паывпывыав",
+    "category": "ACER",
+    "remainder": 1,
+    "price": "32432.00"
   }
 },
 {
   "model": "webapp.product",
   "pk": 4,
   "fields": {
-    "name": "Телевизор",
-    "description": "hp Диагональ 92 дюйма",
+    "name": "4",
+    "description": "raegaed",
     "category": "OTHER",
-    "remainder": 10,
-    "price": "10000.00"
+    "remainder": 1,
+    "price": "3242.00"
   }
 },
 {
   "model": "webapp.product",
   "pk": 5,
   "fields": {
-    "name": "телефон",
-    "description": "Huawei 4/64",
+    "name": "5",
+    "description": "fsddsfsdfs",
     "category": "OTHER",
-    "remainder": 9,
-    "price": "20000.00"
+    "remainder": 0,
+    "price": "21253.00"
   }
 },
 {
   "model": "webapp.product",
   "pk": 6,
   "fields": {
-    "name": "ноутбук",
-    "description": "ACER Aspire 7 A715-41G-R02Q, 15.6\", IPS, AMD Ryzen 7 3750H 2.3ГГц, 8ГБ, 256ГБ SSD, NVIDIA GeForce GTX 1650 - 4096 Мб, Eshell, NH.Q8LER.005, черный",
-    "category": "ACER",
+    "name": "6",
+    "description": "wwrwerw",
+    "category": "OTHER",
     "remainder": 0,
-    "price": "90000.00"
+    "price": "12.00"
   }
 },
 {
   "model": "webapp.product",
   "pk": 7,
   "fields": {
-    "name": "наушники",
-    "description": "AirPods 2 настраиваются в одно касание и буквально творят чудеса. Они сразу готовы к работе и мгновенно подключаются к вашим устройствам. Наушники оснащены специальными сенсорами, поэтому воспроизведение автоматически приостанавливается, когда вы их снимаете.",
-    "category": "IPHONE",
-    "remainder": 10,
-    "price": "1000.00"
+    "name": "7",
+    "description": "dfsdfsd",
+    "category": "OTHER",
+    "remainder": 0,
+    "price": "123.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "name": "8",
+    "description": "fsdfsdf",
+    "category": "OTHER",
+    "remainder": 1,
+    "price": "324.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 9,
+  "fields": {
+    "name": "9",
+    "description": "3rwef",
+    "category": "SAMSUNG",
+    "remainder": 1,
+    "price": "31.00"
+  }
+},
+{
+  "model": "webapp.basket",
+  "pk": 1,
+  "fields": {
+    "product": 5,
+    "amount": 1
   }
 },
 {
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$216000$YtFJ8lngJ3cz$7KEY15UtDWkTfiTlRrtbFQzukFIIvpMD1FKgk+zQzW8=",
-    "last_login": "2021-03-08T09:09:06.861Z",
+    "password": "pbkdf2_sha256$216000$NnGlXBdMfNR8$072y9+nWG9VrRUcjUS9wMS7vQKSFeRa2nHLPBmM+Zng=",
+    "last_login": "2021-04-02T09:37:07.913Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
     "last_name": "",
-    "email": "nurbekovbeka319@gmail.com",
+    "email": "admin@admin.com",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2021-03-05T12:01:59.221Z",
+    "date_joined": "2021-04-02T09:37:01.509Z",
     "groups": [],
     "user_permissions": []
   }
