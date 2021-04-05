@@ -4,5 +4,11 @@ from webapp.views.product import (
     ProductView,
     ProductDeleteView,
     ProductUpdateView,
-
+)
+from webapp.views.basket import (
+    BasketIndexView,
+    BasketCreateView,
+    BasketDeleteView,
+    BasketUpdateView,
+    BasketView
 )

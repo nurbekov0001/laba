@@ -4,6 +4,9 @@ from django.core.validators import MinValueValidator
 CATEGORY_CHOICES = [('OTHER', 'other'), ('SAMSUNG', 'samsung'), ('ACER', 'acer'), ('IPHONE', 'iPhone')]
 
 
+
+
+
 class Product(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False, verbose_name="Наименование товара")
     description = models.TextField(max_length=2000, null=True, blank=True, verbose_name="Описание товара")
@@ -20,6 +23,15 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.id}. {self.name}:{self.description} {self.category} {self.remainder}{self.price}'
+
+
+class Basket(models.Model):
+    product = models.ForeignKey("webapp.Product", related_name='product', on_delete=models.CASCADE,
+                                verbose_name="Наименование продукта",)
+    amount = models.IntegerField(validators=[MinValueValidator(0)], verbose_name="Количество")
+
+    def __str__(self):
+        return f'{self.product.name},{self.amount}'
 
 # Create your models here.
 

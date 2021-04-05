@@ -17,3 +17,6 @@ body {
     box-shadow: red 0 0 3px;
     display: inline-block;
 }
+.but{
+    color: black !important;
+}

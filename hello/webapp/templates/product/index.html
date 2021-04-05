@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
     <h1>Project list</h1><br/>
@@ -11,13 +12,19 @@
 
      <h1>Товар list</h1>
     {% for product in products %}
-            <p><a href="{% url "product_view" product.id %}"> Название: {{ product.name }}</a><br/>
+        <div class="panel">
+            <p><a href="{% url "product_view" product.id %}"> Название: {{ product.name }}</a>
+                <button><a href="{% url "basket_add" product.id %}"> <img src="{% static "img/basket.png" %}"
+                 width="15" height="15" alt="basket" style="vertical-align: middle"></a> </button></p>
+            <p>
             Категория: {{ product.get_category_display }}<br/>
             Стоимость: {{ product.price }}
         </p>
+        </div>
         <br/>
         <br/>
     {% endfor %}
+
      {% include 'partial/paginate.html' %}
 {% endblock %}
 

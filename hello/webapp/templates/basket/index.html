@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <h1>Корзинка</h1>
+    {% for basket in baskets %}
+        <p><a href="{% url "product_view" basket.id %}"> Название: {{ basket.product.name }}</a>
+        <button><a href="{% url "basket_delete" basket.id %}"><img src="{% static "img/del.png"%}"
+                width="15" height="15" alt="basket" style="vertical-align: middle">  </a> </button>
+        </p>
+        <p>
+            Стоимость: {{ basket.product.price }}<br/>
+            Количество: {{ basket.amount }}
+        </p>
+        <br/>
+        <br/>
+    {% endfor %}
+
+    <a href="{% url "product_add"  %}">Создать продукт</a>
+
+{% endblock %}

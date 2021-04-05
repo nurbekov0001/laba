@@ -30,3 +30,22 @@
     color: #ffc122;
     text-decoration: underline;
 }
+
+.panel {
+    background: #ccc; /* Цвет фона */
+}
+.panel p {
+    padding: 5px; /* Добавляем поля */
+    margin: 0; /* Убираем отступы у параграфа */
+}
+.title {
+    background: navy; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border-bottom-width: 2px; /* Толщина линии внизу */
+    border-bottom-style: solid; /* Стиль линии внизу */
+    border-bottom-color: white; /* Цвет линии внизу */
+}
+a {
+  color: black!important;
+  text-decoration: none
+}
