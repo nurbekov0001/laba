@@ -58,22 +58,6 @@ class ProductCreateView(CreateView):
         return reverse('product_view', kwargs={'pk': self.object.pk})
 
 
-#
-# class ProjectTracerCreate(CreateView):
-#     model = Tracer
-#     template_name = 'tracer/create.html'
-#     form_class = TracerForm
-#
-#     def form_valid(self, form):
-#         project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
-#         tracer = form.save(commit=False)
-#         tracer.project = project
-#         tracer.save()
-#         form.save_m2m()
-#         return redirect('project_view', pk=project.pk)
-#
-
-
 class ProductUpdateView(UpdateView):
     model = Product
     template_name = 'product/update.html'

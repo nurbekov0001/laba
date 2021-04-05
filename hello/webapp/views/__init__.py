@@ -9,6 +9,5 @@ from webapp.views.basket import (
     BasketIndexView,
     BasketCreateView,
     BasketDeleteView,
-    BasketUpdateView,
-    BasketView
+
 )
