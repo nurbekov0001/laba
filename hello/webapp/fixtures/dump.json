@@ -17,7 +17,7 @@
     "name": "2 продукт",
     "description": "fasdfsdfasdf",
     "category": "ACER",
-    "remainder": 3243,
+    "remainder": 3241,
     "price": "4321.00"
   }
 },
@@ -39,7 +39,7 @@
     "name": "4",
     "description": "raegaed",
     "category": "OTHER",
-    "remainder": 1,
+    "remainder": 0,
     "price": "3242.00"
   }
 },
@@ -50,7 +50,7 @@
     "name": "5",
     "description": "fsddsfsdfs",
     "category": "OTHER",
-    "remainder": 0,
+    "remainder": 1,
     "price": "21253.00"
   }
 },
@@ -94,16 +94,61 @@
     "name": "9",
     "description": "3rwef",
     "category": "SAMSUNG",
-    "remainder": 1,
+    "remainder": 0,
     "price": "31.00"
   }
 },
 {
-  "model": "webapp.basket",
+  "model": "webapp.intermediatetable",
   "pk": 1,
   "fields": {
     "product": 5,
+    "order": 1,
+    "amount": 33
+  }
+},
+{
+  "model": "webapp.basket",
+  "pk": 2,
+  "fields": {
+    "product": 9,
     "amount": 1
+  }
+},
+{
+  "model": "webapp.basket",
+  "pk": 3,
+  "fields": {
+    "product": 2,
+    "amount": 2
+  }
+},
+{
+  "model": "webapp.basket",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "amount": 1
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 1,
+  "fields": {
+    "user_name": "eff",
+    "phone_number": "afdf",
+    "address": "dasfasdfa",
+    "created_at": "2021-04-05T10:22:20.938Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 2,
+  "fields": {
+    "user_name": "Beka",
+    "phone_number": "010231",
+    "address": "Bishkek",
+    "created_at": "2021-04-05T10:22:58.456Z"
   }
 },
 {
@@ -111,7 +156,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$NnGlXBdMfNR8$072y9+nWG9VrRUcjUS9wMS7vQKSFeRa2nHLPBmM+Zng=",
-    "last_login": "2021-04-02T09:37:07.913Z",
+    "last_login": "2021-04-05T10:44:19.556Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
