@@ -17,7 +17,7 @@
     "name": "2 продукт",
     "description": "fasdfsdfasdf",
     "category": "ACER",
-    "remainder": 3241,
+    "remainder": 3239,
     "price": "4321.00"
   }
 },
@@ -108,27 +108,47 @@
   }
 },
 {
-  "model": "webapp.basket",
+  "model": "webapp.intermediatetable",
   "pk": 2,
   "fields": {
     "product": 9,
+    "order": 3,
     "amount": 1
   }
 },
 {
-  "model": "webapp.basket",
+  "model": "webapp.intermediatetable",
   "pk": 3,
   "fields": {
     "product": 2,
+    "order": 3,
+    "amount": 2
+  }
+},
+{
+  "model": "webapp.intermediatetable",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "order": 3,
+    "amount": 1
+  }
+},
+{
+  "model": "webapp.intermediatetable",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "order": 4,
     "amount": 2
   }
 },
 {
   "model": "webapp.basket",
-  "pk": 4,
+  "pk": 6,
   "fields": {
-    "product": 4,
-    "amount": 1
+    "product": 3,
+    "amount": 3
   }
 },
 {
@@ -149,6 +169,26 @@
     "phone_number": "010231",
     "address": "Bishkek",
     "created_at": "2021-04-05T10:22:58.456Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 3,
+  "fields": {
+    "user_name": "fasdfsd",
+    "phone_number": "asdfsad",
+    "address": "sfadds",
+    "created_at": "2021-04-05T12:29:52.386Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 4,
+  "fields": {
+    "user_name": "beka",
+    "phone_number": "049002",
+    "address": "bishkek",
+    "created_at": "2021-04-05T12:30:37.220Z"
   }
 },
 {
