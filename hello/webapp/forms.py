@@ -1,5 +1,5 @@
 from django import forms
-from webapp.models import Product, IntermediateTable, Order
+from webapp.models import Product, Order
 
 
 class ProductForm(forms.ModelForm):
@@ -16,7 +16,7 @@ class SearchForm(forms.Form):
     search_value = forms.CharField(max_length=100, required=False, label='Найти')
 
 
-class OrderForm(forms.Form):
+class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('user_name', 'phone_number', 'address')

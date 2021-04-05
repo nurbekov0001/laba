@@ -6,15 +6,22 @@
     {% for basket in baskets %}
         <p><a href="{% url "product_view" basket.id %}"> Название: {{ basket.product.name }}</a>
         <button><a href="{% url "basket_delete" basket.id %}"><img src="{% static "img/del.png"%}"
-                width="15" height="15" alt="basket" style="vertical-align: middle">  </a> </button>
-        </p>
-        <p>
-            Стоимость: {{ basket.product.price }}<br/>
+                width="15" height="15" alt="basket" style="vertical-align: middle">  </a> </button>  &emsp;
+
+            Стоимость: {{ basket.product.price }}&emsp;&emsp;
             Количество: {{ basket.amount }}
         </p>
         <br/>
-        <br/>
+
     {% endfor %}
+        <p>Сумма всех {{ sum }} </p>
+
+
+
+    <form action="{% url "order_add" %}" method="post">
+        {% include "partial/form.html" with button_text="Оформить заказ" %}
+    </form>
+
 
     <a href="{% url "product_add"  %}">Создать продукт</a>
 
