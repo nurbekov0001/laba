@@ -9,8 +9,8 @@ from webapp.views import (
     BasketCreateView,
     BasketDeleteView,
     OrderCreateView
-
 )
+
 
 urlpatterns = [
     path('', IndexView.as_view(), name='product_list'),
@@ -24,7 +24,7 @@ urlpatterns = [
     path('basket/', BasketIndexView.as_view(), name='basket_list'),
     path('add/<int:pk>', BasketCreateView.as_view(), name='basket_add'),
     path('delete/<int:pk>', BasketDeleteView.as_view(), name='basket_delete'),
-path('add/', OrderCreateView.as_view(), name='order_add'),
+    path('add/', OrderCreateView.as_view(), name='order_add'),
 
 
 ]

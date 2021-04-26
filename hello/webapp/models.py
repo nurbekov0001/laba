@@ -13,6 +13,7 @@ class Product(models.Model):
     price = models.DecimalField(null=False, blank=False, validators=[MinValueValidator(0)], max_digits=7,
                                 decimal_places=2, verbose_name="Стоимость")
 
+
     class Meta:
         db_table = 'Products'
         verbose_name = 'продукт'
@@ -52,6 +53,9 @@ class Order(models.Model):
     phone_number = models.CharField(max_length=15, null=False, blank=False, verbose_name="Номер клиента")
     address = models.CharField(max_length=40, null=False, blank=False, verbose_name="Адрес клиента")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
+
+
+
 
     def __str__(self):
         return f'{self.id}{self.product},{self.user_name},{self.phone_number},{self.address},{self.created_at}'

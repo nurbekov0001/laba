@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from accounts.models import Profile
-from .forms import MyUserCreationForm, ProfileChangeForm, PasswordChangeForm
+from accounts.forms import MyUserCreationForm, ProfileChangeForm, PasswordChangeForm
 from django.contrib.auth import login, authenticate, logout
 from django.views.generic import DetailView, ListView, UpdateView
 from django.contrib.auth import get_user_model, update_session_auth_hash
@@ -19,7 +19,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('project:project_list')
+            return redirect('product_list')
         else:
             context['has_error'] = True
     return render(request, 'login.html', context=context)
@@ -27,7 +27,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('project:project_list')
+    return redirect('product_list')
 
 
 def register_view(request, *args, **kwargs):
@@ -37,7 +37,8 @@ def register_view(request, *args, **kwargs):
             user = form.save()
             Profile.objects.create(user=user)
             login(request, user)
-            return redirect('project:project_list')
+            return redirect('product_list')
+
     else:
         form = MyUserCreationForm()
     return render(request, 'user_create.html', context={'form': form})
