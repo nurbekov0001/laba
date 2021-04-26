@@ -17,6 +17,7 @@ class BasketIndexView(ListView):
             sum += product.amount * product.product.price
         return sum
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['sum'] = self.get_sum_basket()

@@ -39,6 +39,9 @@ class Basket(models.Model):
     def __str__(self):
         return f'{self.id}{self.product},{self.amount}'
 
+    def get_total(self):
+        return self.amount * self.product.price
+
 
 class Order(models.Model):
     product = models.ManyToManyField("webapp.Product", related_name='products',

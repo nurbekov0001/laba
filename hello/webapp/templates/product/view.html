@@ -1,11 +1,10 @@
-
-
 {% extends "base.html" %}
-
+{% load static %}
 {% block menu %}
 
     <li><a href="{% url "product_update" product.id %}">Редактировать продукт</a></li>
     <li><a href="{% url "product_delete" product.id %}">Удалить продукт</a></li>
+     <li><a href="{% url "basket_add" product.id %}"> Добавить в корзинку</a> </li>
 {% endblock menu %}
 {% block page_header %}Продукт {{ product.id }}{% endblock page_header %}
 {% block content %}
