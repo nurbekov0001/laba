@@ -18,11 +18,15 @@
         <p>Сумма всех {{ sum }} </p>
 
 
-
-    <form action="{% url "order_add" %}" method="post">
+    {% if user.is_authenticated %}
+         <form action="{% url "order_add" %}" method="post">
+         <button type="button"> Оформить заказ!</button>
+         </form>
+    {% else %}
+        <form action="{% url "order_add" %}" method="post">
         {% include "partial/form.html" with button_text="Оформить заказ" %}
     </form>
-
+    {% endif %}
 <br>
     <a href="{% url "product_add"  %}">Создать продукт</a>
 

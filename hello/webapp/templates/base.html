@@ -10,20 +10,17 @@
 <body>
     <nav class="navbar" >
         <ul class="menu">
-            <li><a href="{% url "product_list" %}">Все Товары</a></li>
+                <li><a href="{% url "product_list" %}">Все Товары</a></li>
           <li><a href="{% url "basket_list" %}">Корзинка</a></li>
 {#        #}
                     {% if perms.webapp.add_product %}
             <li><a href="{% url "product_add" %}">Создать Товар</a></li>
             {% endif %}
-            {% if perms.webapp.view_users %}
-                <li><a href="{% url "accounts:user" %}"> Все пользователи  </a></li>
-            {% endif %}
 
             {% if user.is_authenticated %} {% block menu_links %}{% endblock %}
             <li class="menu-right"><a href="{% url 'accounts:logout' %}?next={{request.get_full_path}}"
                                       class="nav-link">Выход</a></li>
-            <li class="menu-right">  Привет, <a href="{% url 'accounts:detail' user.pk %}">{{ user.username }}</a>!</li>
+            <li class="menu-right">  Привет  ,  {{ user.username }} !</li>
             {% else %}
             <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{request.get_full_path}}"
                                       class="nav-link">Вход</a></li>
@@ -31,6 +28,7 @@
                                            class="nav-link">Регистрация</a></li>
             {% endif %}
 {#        #}
+        <li><a href="{% url "orders_view" %}">Мои заказы </a></li>
 
 
             {% block menu %}{% endblock %}
