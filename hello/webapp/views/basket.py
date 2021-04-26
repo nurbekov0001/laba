@@ -4,8 +4,6 @@ from webapp.models import Product, Basket, Order, IntermediateTable
 from django.views.generic import ListView, DeleteView, View
 from webapp.forms import OrderForm
 from django.shortcuts import redirect
-from django.contrib.sessions.models import Session
-from django.utils.http import urlencode
 
 
 class BasketIndexView(ListView):
@@ -41,14 +39,10 @@ class BasketCreateView(View):
         if product.remainder > 0:
             try:
                 basket = Basket.objects.get(product__pk=pk, pk__in=session)
-                # product.remainder -= 1
                 basket.amount += 1
-                # product.save()
                 basket.save()
             except Basket.DoesNotExist:
                 basket = Basket.objects.create(product=product, amount=1)
-                # product.remainder -= 1
-                # product.save()
                 session.append(basket.pk)
                 request.session['basket'] = session
         return redirect('product_list')
@@ -68,11 +62,6 @@ class BasketDeleteView(DeleteView):
         return super().delete(request, *args, **kwargs)
 
     def get_success_url(self, *args, **kwargs):
-        # super(BasketCreateView, self.get(request=))
-        # product = Product.objects.get(pk=self.object.product.pk)
-
-        # product.remainder += self.object.amount
-        # product.save()
         return reverse('basket_list')
 
 
@@ -84,16 +73,25 @@ class OrderCreateView(View):
             self.product_order = form.save()
             self.order()
             return redirect('product_list')
-        super(BasketCreateView)
         return redirect('basket_list')
 
     def order(self):
-        for order in Basket.objects.all():
-            IntermediateTable.objects.create(product=order.product, order=self.product_order, amount=order.amount)
-        Basket.objects.all().delete()
+        session = self.request.session.get('basket', [])
+        for order in Basket.objects.filter(pk__in=session):
+            product = order.product
+            if product.remainder >= order.amount:
+                IntermediateTable.objects.create(product=order.product, order=self.product_order, amount=order.amount)
+                product.remainder -= order.amount
+                product.save()
+            order.delete()
+
 
 
 class ViewOrders(ListView):
     model = IntermediateTable
     template_name = "basket/orders.html"
     context_object_name = 'order'
+
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset()
+        return queryset.filter(user=self.request.user)

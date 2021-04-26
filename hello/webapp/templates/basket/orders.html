@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for i in order %}
-   <p> {{ i.user.description }}</p>
+   название: {{ i.product }}
+   название: {{ i.product.name }}
 
 {% endfor %}
 {% endblock %}
