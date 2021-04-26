@@ -21,6 +21,8 @@
             <li class="menu-right"><a href="{% url 'accounts:logout' %}?next={{request.get_full_path}}"
                                       class="nav-link">Выход</a></li>
             <li class="menu-right">  Привет  ,  {{ user.username }} !</li>
+                <li><a href="{% url "orders_view" %}">Мои заказы </a></li>
+
             {% else %}
             <li class="menu-right"><a href="{% url 'accounts:login' %}?next={{request.get_full_path}}"
                                       class="nav-link">Вход</a></li>
@@ -28,7 +30,7 @@
                                            class="nav-link">Регистрация</a></li>
             {% endif %}
 {#        #}
-        <li><a href="{% url "orders_view" %}">Мои заказы </a></li>
+
 
 
             {% block menu %}{% endblock %}

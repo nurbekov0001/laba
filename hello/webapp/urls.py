@@ -27,6 +27,6 @@ urlpatterns = [
     path('delete/<int:pk>', BasketDeleteView.as_view(), name='basket_delete'),
     path('add/', OrderCreateView.as_view(), name='order_add'),
 
-    path('orders/', ViewOrders.as_view, name='orders_view')
+    path('orders/', ViewOrders.as_view(), name='orders_view')
 
 ]
