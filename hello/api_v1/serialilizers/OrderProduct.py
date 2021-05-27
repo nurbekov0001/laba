@@ -22,8 +22,8 @@ class OrderSerializer(serializers.ModelSerializer):
         print(validated_data)
         order_product = validated_data.pop('intermediate_order')
         order = Order.objects.create(**validated_data)
-        for i in order:
-            a = order_product(
+        for i in order_product:
+            a = IntermediateTable(
                 product=i['product'], order=order, amount=i['amount'])
             a.save()
         validated_data['intermediate_order'] = order_product
