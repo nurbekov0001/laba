@@ -11,7 +11,6 @@ class BasketIndexView(ListView):
     model = Basket
     context_object_name = 'baskets'
 
-
     def get_queryset(self):
         session = self.request.session.get('basket', [])
         return Basket.objects.filter(pk__in=session)
@@ -21,7 +20,6 @@ class BasketIndexView(ListView):
         for product in self.get_queryset():
             sum += product.amount * product.product.price
         return sum
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -71,6 +69,9 @@ class OrderCreateView(View):
         form = OrderForm(data=request.POST)
         if form.is_valid():
             self.product_order = form.save()
+            if self.request.user.is_authenticated:
+                self.product_order.user = self.request.user
+                self.product_order.save()
             self.order()
             return redirect('product_list')
         return redirect('basket_list')
@@ -80,15 +81,17 @@ class OrderCreateView(View):
         for order in Basket.objects.filter(pk__in=session):
             product = order.product
             if product.remainder >= order.amount:
-                IntermediateTable.objects.create(product=order.product, order=self.product_order, amount=order.amount)
+                i = IntermediateTable.objects.create(product=order.product, order=self.product_order,
+                                                     amount=order.amount)
+
                 product.remainder -= order.amount
                 product.save()
             order.delete()
-
+        self.request.session['basket'] = []
 
 
 class ViewOrders(ListView):
-    model = IntermediateTable
+    model = Order
     template_name = "basket/orders.html"
     context_object_name = 'order'
 

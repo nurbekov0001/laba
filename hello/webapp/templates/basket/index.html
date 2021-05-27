@@ -13,20 +13,11 @@
             Стоимость товара с количеством: {{ basket.get_total }}
         </p>
         <br/>
-
     {% endfor %}
         <p>Сумма всех {{ sum }} </p>
-
-
-    {% if user.is_authenticated %}
-         <form action="{% url "order_add" %}" method="post">
-         <button type="button"> Оформить заказ!</button>
-         </form>
-    {% else %}
-        <form action="{% url "order_add" %}" method="post">
+            <form action="{% url "order_add" %}" method="post">
         {% include "partial/form.html" with button_text="Оформить заказ" %}
     </form>
-    {% endif %}
 <br>
     <a href="{% url "product_add"  %}">Создать продукт</a>
 

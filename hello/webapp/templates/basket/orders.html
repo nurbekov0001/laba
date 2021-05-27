@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for i in order %}
-   название: {{ i.product }}
-   название: {{ i.product.name }}
+    <div>
+        имя покупателя: {{ i.user_name }}
+        время: {{ i.created_at }}
+    </div>
+    {% for product_order in i.order.all %}
+        наименование продукта : {{ product_order.product.name }}<br>
+        категория: {{ product_order.product.category }}<br>
+        цена за 1 продукт :{{ product_order.product.price }}<br>
+        количество: {{ product_order.amount }}<br>
+        сумма {{ product_order.get_total }}
+    {% endfor %}
+       <p>total {{ total }}</p>
+
 
 {% endfor %}
 {% endblock %}

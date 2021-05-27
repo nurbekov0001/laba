@@ -15,6 +15,7 @@ class Product(models.Model):
                                 decimal_places=2, verbose_name="Стоимость")
 
 
+
     class Meta:
         db_table = 'Products'
         verbose_name = 'продукт'
@@ -25,13 +26,16 @@ class Product(models.Model):
 
 
 class IntermediateTable(models.Model):
-    user = models.ForeignKey(get_user_model(), null=True, blank=True, related_name='order', on_delete=models.CASCADE)
     product = models.ForeignKey("webapp.Product", related_name="intermediate_table", on_delete=models.CASCADE)
     order = models.ForeignKey("webapp.Order", related_name="order", on_delete=models.CASCADE)
     amount = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(0)], verbose_name="Количество")
 
     def __str__(self):
         return f'{self.id}{self.product},{self.order},{self.amount}'
+
+    def get_total(self):
+        return self.amount * self.product.price
+
 
 
 class Basket(models.Model):
@@ -47,6 +51,7 @@ class Basket(models.Model):
 
 
 class Order(models.Model):
+    user = models.ForeignKey(get_user_model(), null=True, blank=True, related_name='order', on_delete=models.CASCADE)
 
     product = models.ManyToManyField("webapp.Product", related_name='products',
                                      verbose_name='Товары',
